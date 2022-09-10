@@ -19,15 +19,15 @@ class Grams
     array_2 = @string_2.downcase.split(//)
 
     if (!self.class.word?(array_1) || !self.class.word?(array_2))
-      return nil
+      return "You need to input actual words!"
     end
 
     if (array_1.all? { |letter| array_2.include?(letter)})
-      true
+      return "These words are anagrams."
     elsif (array_1.none? { |letter| array_2.include?(letter)})
-      "These words have no letter matches and are antigrams."
+      return "These words have no letter matches...but they are antigrams!"
     else
-      false
+      return "Sorry! These words are not anagrams, nor are they antigrams"
     end
   end
 

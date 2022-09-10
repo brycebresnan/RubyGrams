@@ -4,27 +4,27 @@ require ("./lib/rubygrams.rb")
 describe('#anagram?') do
   it("should return true if two words are found to be anagrams when compared") do
   test_words = Grams.new("race","care")
-  expect(test_words.anagram?).to(eq(true))
+  expect(test_words.anagram?).to(eq("These words are anagrams."))
   end
 
   it("should return false if two words are found not to be anagrams when compared") do
     test_words = Grams.new("bace","acae")
-    expect(test_words.anagram?).to(eq(false))
+    expect(test_words.anagram?).to(eq("Sorry! These words are not anagrams, nor are they antigrams"))
     end
 
   it("should still match anagrams despite casing differences") do
     test_words = Grams.new("Race","cAre")
-    expect(test_words.anagram?).to(eq(true))
+    expect(test_words.anagram?).to(eq("These words are anagrams."))
     end
 
   it("should check if inputted strings are actual words. (Rule 1: contains a vowel") do
     test_words = Grams.new("dsqp","pdqs")
-    expect(test_words.anagram?).to(eq(nil))
+    expect(test_words.anagram?).to(eq("You need to input actual words!"))
     end
 
   it("if strings are not antigrams (false), check to see if no letters are in common.") do
     test_words = Grams.new("dog","cat")
-    expect(test_words.anagram?).to(eq("These words have no letter matches and are antigrams."))
+    expect(test_words.anagram?).to(eq("These words have no letter matches...but they are antigrams!"))
     end
 
 end
