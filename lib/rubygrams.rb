@@ -22,6 +22,13 @@ class Grams
       return nil
     end
 
-    array_1.all? { |letter| array_2.include?(letter)} 
+    if (array_1.all? { |letter| array_2.include?(letter)})
+      true
+    elsif (array_1.none? { |letter| array_2.include?(letter)})
+      "These words have no letter matches and are antigrams."
+    else
+      false
+    end
   end
+
 end
