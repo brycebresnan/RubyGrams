@@ -7,9 +7,9 @@ describe('#anagram?') do
   expect(test_words.anagram?).to(eq("These examples are anagrams."))
   end
 
-  it("should return false if two words are found not to be anagrams when compared") do
-    test_words = Grams.new("bace","acae")
-    expect(test_words.anagram?).to(eq("Sorry! These examples are not anagrams, nor are they antigrams"))
+  it("should return false if two words are found not to be anagrams when compared, but returns any matching letters") do
+    test_words = Grams.new("bottle","top")
+    expect(test_words.anagram?).to(eq("Sorry! These examples are not anagrams, but 2 letters match: t, o"))
     end
 
   it("should still match anagrams despite casing differences") do
