@@ -11,4 +11,9 @@ describe('#anagram?') do
     test_words = Grams.new("bace","acae")
     expect(test_words.anagram?).to(eq(false))
     end
+
+    it("should still match anagrams despite casing differences") do
+      test_words = Grams.new("Race","cAre")
+      expect(test_words.anagram?).to(eq(true))
+      end
 end
