@@ -5,8 +5,8 @@ class Grams
   attr_accessor(:string_2)
 
   def initialize(string_1, string_2)
-    @string_1 = string_1
-    @string_2 = string_2
+    @string_1 = string_1.downcase
+    @string_2 = string_2.downcase
   end
 
   def anagram?
