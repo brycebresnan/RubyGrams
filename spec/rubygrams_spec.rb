@@ -22,4 +22,9 @@ describe('#anagram?') do
     expect(test_words.anagram?).to(eq(nil))
     end
 
+  it("if strings are not antigrams (false), check to see if no letters are in common.") do
+    test_words = Grams.new("dog","cat")
+    expect(test_words.anagram?).to(eq("These words have no letter matches and are antigrams."))
+    end
+
 end
