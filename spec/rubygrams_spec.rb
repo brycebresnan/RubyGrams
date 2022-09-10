@@ -27,4 +27,9 @@ describe('#anagram?') do
     expect(test_words.anagram?).to(eq("These words have no letter matches...but they are antigrams!"))
     end
 
+  it("should account for sentences that are anagrams.") do
+    test_words = Grams.new("The Morse Code.","Here come dots!")
+    expect(test_words.anagram?).to(eq("These words are anagrams."))
+    end
+
 end
