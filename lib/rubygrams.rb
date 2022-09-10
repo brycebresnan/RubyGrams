@@ -27,7 +27,9 @@ class Grams
     elsif (array_1.none? { |letter| array_2.include?(letter)})
       return "These examples have no letter matches...but they are antigrams!"
     else
-      return "Sorry! These examples are not anagrams, nor are they antigrams"
+      rej_arr = array_1.find_all { |letter| array_2.include?(letter)}.uniq
+      rtn_str = rej_arr.join(", ")
+      return "Sorry! These examples are not anagrams, but 2 letters match: #{rtn_str}"
     end
   end
   
