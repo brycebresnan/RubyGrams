@@ -1,5 +1,6 @@
 require 'rspec'
 require ("./lib/rubygrams.rb")
+require ('./lib/palindromes.rb')
 
 describe('#anagram?') do
   it("should return true if two words are found to be anagrams when compared") do
@@ -41,4 +42,19 @@ describe('#anagram?') do
     test_words = Grams.new("looks","looks")
     expect(test_words.anagram?).to(eq("These are the same word."))
     end
+  end
+
+describe('#is_palindrome?') do
+  it("should return message if example is a palindrome") do
+    test_subject = "dood"
+    my_pal = Palindrome.new(test_subject)
+    expect(my_pal.is_palindrome?).to(eq("This example is a Palindrome!"))
+  end 
+
+  it("should return message if example is not a palindrome") do
+    test_subject = "dtod"
+    my_pal = Palindrome.new(test_subject)
+    expect(my_pal.is_palindrome?).to(eq("This example is not a Palindrome."))
+  end 
+
 end
