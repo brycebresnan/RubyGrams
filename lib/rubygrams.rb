@@ -17,6 +17,10 @@ class Grams
   def anagram?
     array_1 = @string_1.gsub(/[^A-Za-z]/, '').downcase.split(//)
     array_2 = @string_2.gsub(/[^A-Za-z]/, '').downcase.split(//)
+    
+    if (array_1.length != array_2.length)
+      return "These examples are not the same number of characters, thus they can not be anagrams."
+    end
 
     if (!self.class.word?(array_1) || !self.class.word?(array_2))
       return "You need to input actual words!"
@@ -29,7 +33,7 @@ class Grams
     else
       rej_arr = array_1.find_all { |letter| array_2.include?(letter)}.uniq
       rtn_str = rej_arr.join(", ")
-      return "Sorry! These examples are not anagrams, but 2 letters match: #{rtn_str}"
+      return "Sorry! These examples are not anagrams, but #{rej_arr.length} letters match: #{rtn_str}"
     end
   end
   
