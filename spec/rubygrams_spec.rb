@@ -37,4 +37,8 @@ describe('#anagram?') do
     expect(test_words.anagram?).to(eq("These examples are not the same number of characters, thus they can not be anagrams."))
     end
 
+  it("should make sure the two words are not the same.") do
+    test_words = Grams.new("looks","looks")
+    expect(test_words.anagram?).to(eq("These are the same word."))
+    end
 end
