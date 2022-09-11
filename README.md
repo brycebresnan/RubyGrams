@@ -2,27 +2,25 @@
 
 #### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
 
-#### A project to demonstrate TDD in Ruby.
+#### A project to demonstrate TDD in Ruby. Running the script will allow the user to select different word examining programs. Currently you can check to see if two words are Anagrams of one another. You can also select a palindrome checker that can tell if a word is a palindrome or not.
 
 ## Technologies Used
 
 * Ruby
-
-
-## Specifications
-
-* 
-
+* gem: rspec
+* gem: pry
+* gem: tty-prompt
 
 ## Setup/Installation Requirements
 
 * Clone this repository from GitHub.
-* 
+* Navigate to the root in command line
+* run <code>$ruby rubygrams_script.rb</code>
 
 
 ## Known Bugs
 
-* 
+* the gem tty-prompt does not work properly in Git Bash. Use Powershell or a different bash.
 
 ## License
 MIT License
