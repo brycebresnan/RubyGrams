@@ -20,10 +20,10 @@ class Grams
     
     if (array_1.length != array_2.length)
       return "These examples are not the same number of characters, thus they can not be anagrams."
-    end
-
-    if (!self.class.word?(array_1) || !self.class.word?(array_2))
+    elsif (!self.class.word?(array_1) || !self.class.word?(array_2))
       return "You need to input actual words!"
+    elsif (array_1 == array_2)
+      return "These are the same word."
     end
 
     if (array_1.all? { |letter| array_2.include?(letter)})
